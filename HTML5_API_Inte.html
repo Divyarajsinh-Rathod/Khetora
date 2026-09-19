@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Khetora Exercise 2 demonstrates practical HTML5 APIs for a smart-farming prototype." />
+    <title>Khetora | Exercise 2 HTML5 APIs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              forest: "#12352a",
+              leaf: "#d9ee9a",
+              clay: "#e8754a",
+              sand: "#f7f3ea"
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+
+  <body class="bg-sand text-slate-800 antialiased">
+    <header class="sticky top-0 z-50 border-b border-forest/10 bg-sand/95 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+        <a href="#home" class="flex items-center gap-3" aria-label="Khetora home">
+          <span class="grid h-10 w-10 place-items-center rounded-2xl bg-forest text-xl font-bold text-leaf">K</span>
+          <span>
+            <strong class="block text-lg leading-none text-forest">Khetora</strong>
+            <small class="text-xs font-medium text-slate-500">Exercise 2 - HTML5 API Lab</small>
+          </span>
+        </a>
+
+        <nav class="hidden items-center gap-6 text-sm font-semibold md:flex" aria-label="Primary navigation">
+          <a class="hover:text-clay" href="#research">API research</a>
+          <a class="hover:text-clay" href="#tools">Field tools</a>
+          <a class="hover:text-clay" href="#media">Media</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="border-b border-forest/10">
+        <div class="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1.15fr_.85fr] md:py-20">
+          <div>
+            <p class="inline-flex rounded-full bg-leaf px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-forest">Smart farming prototype</p>
+            <h1 class="mt-5 max-w-3xl text-5xl font-black leading-tight text-forest sm:text-6xl">Khetora Field API Lab</h1>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600">This Exercise 2 update adds simple HTML5 browser APIs to the existing Khetora project. Each tool solves one small farming-related task and can be explained easily during viva.</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#tools" class="rounded-xl bg-forest px-5 py-3 text-sm font-bold text-white hover:bg-[#0c261d]">Try the APIs</a>
+              <a href="#research" class="rounded-xl border border-forest/20 px-5 py-3 text-sm font-bold text-forest hover:bg-white">See API research</a>
+            </div>
+          </div>
+
+          <aside class="rounded-3xl bg-forest p-7 text-white shadow-xl" aria-label="Exercise summary">
+            <p class="text-sm font-bold uppercase tracking-[0.14em] text-leaf">Exercise target</p>
+            <h2 class="mt-4 text-3xl font-black">7 HTML5 APIs included</h2>
+            <ul class="mt-6 space-y-3 text-sm leading-6 text-white/85">
+              <li><strong class="text-leaf">1.</strong> Geolocation</li>
+              <li><strong class="text-leaf">2.</strong> Local Storage</li>
+              <li><strong class="text-leaf">3.</strong> File API</li>
+              <li><strong class="text-leaf">4.</strong> Drag and Drop</li>
+              <li><strong class="text-leaf">5.</strong> Canvas</li>
+              <li><strong class="text-leaf">6.</strong> Web Notifications</li>
+              <li><strong class="text-leaf">7.</strong> Audio and Video</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section id="research" class="bg-white py-16">
+        <div class="mx-auto max-w-6xl px-5">
+          <p class="text-sm font-bold uppercase tracking-[0.14em] text-clay">API research</p>
+          <h2 class="mt-2 text-3xl font-black text-forest">Why these APIs suit Khetora</h2>
+          <p class="mt-4 max-w-3xl leading-7 text-slate-600">The APIs below were selected because they make a farming webpage more useful without making the code difficult to explain.</p>
+
+          <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <article class="rounded-2xl border border-forest/10 p-5">
+              <h3 class="font-extrabold text-forest">Geolocation API</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Captures the current latitude and longitude so a future farm dashboard can use location-based weather data.</p>
+            </article>
+            <article class="rounded-2xl border border-forest/10 p-5">
+              <h3 class="font-extrabold text-forest">Local Storage API</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Saves a farmer's basic profile in the browser so it remains available after a page refresh.</p>
+            </article>
+            <article class="rounded-2xl border border-forest/10 p-5">
+              <h3 class="font-extrabold text-forest">File API and Drag and Drop</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Lets a farmer select or drop a crop photo and see a preview before uploading it to a real server.</p>
+            </article>
+            <article class="rounded-2xl border border-forest/10 p-5">
+              <h3 class="font-extrabold text-forest">Canvas API</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Draws a simple crop-status chart directly in the browser from the selected soil-moisture value.</p>
+            </article>
+            <article class="rounded-2xl border border-forest/10 p-5">
+              <h3 class="font-extrabold text-forest">Web Notifications API</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Shows a browser reminder after the user gives permission, useful for a field inspection reminder.</p>
+            </article>
+            <article class="rounded-2xl border border-forest/10 p-5">
+              <h3 class="font-extrabold text-forest">Audio and Video APIs</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Demonstrate how Khetora can provide short learning media to farmers inside the webpage.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="tools" class="py-16">
+        <div class="mx-auto max-w-6xl px-5">
+          <p class="text-sm font-bold uppercase tracking-[0.14em] text-clay">API integration</p>
+          <h2 class="mt-2 text-3xl font-black text-forest">Field tools</h2>
+
+          <div class="mt-8 grid gap-6 lg:grid-cols-2">
+            <article class="rounded-3xl border border-forest/10 bg-white p-6 shadow-sm">
+              <p class="text-sm font-bold text-clay">API 1: Geolocation</p>
+              <h3 class="mt-2 text-2xl font-black text-forest">Capture field location</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">Click the button and allow location access. The browser returns latitude and longitude.</p>
+              <button id="locationButton" class="mt-5 rounded-xl bg-forest px-4 py-3 text-sm font-bold text-white hover:bg-[#0c261d]" type="button">Get my location</button>
+              <p id="locationResult" class="mt-4 rounded-xl bg-sand p-4 text-sm leading-6 text-slate-700" aria-live="polite">Location has not been captured yet.</p>
+            </article>
+
+            <article class="rounded-3xl border border-forest/10 bg-white p-6 shadow-sm">
+              <p class="text-sm font-bold text-clay">API 2: Local Storage</p>
+              <h3 class="mt-2 text-2xl font-black text-forest">Save field profile</h3>
+              <form id="profileForm" class="mt-4 grid gap-3 sm:grid-cols-2">
+                <label class="text-sm font-semibold text-forest">Farmer name
+                  <input id="farmerName" required class="mt-1 w-full rounded-xl border border-slate-200 bg-slate-50 p-3 text-slate-700 outline-none focus:border-clay" placeholder="Enter name" />
+                </label>
+                <label class="text-sm font-semibold text-forest">Main crop
+                  <input id="cropName" required class="mt-1 w-full rounded-xl border border-slate-200 bg-slate-50 p-3 text-slate-700 outline-none focus:border-clay" placeholder="Example: Tomato" />
+                </label>
+                <label class="text-sm font-semibold text-forest sm:col-span-2">Usual soil condition
+                  <select id="savedMoisture" class="mt-1 w-full rounded-xl border border-slate-200 bg-slate-50 p-3 text-slate-700 outline-none focus:border-clay">
+                    <option value="Dry">Dry</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Wet">Wet</option>
+                  </select>
+                </label>
+                <button class="rounded-xl bg-clay px-4 py-3 text-sm font-bold text-white hover:bg-[#ce603a] sm:col-span-2" type="submit">Save profile in browser</button>
+              </form>
+              <p id="profileResult" class="mt-4 text-sm leading-6 text-slate-700" aria-live="polite">No saved profile found in this browser.</p>
+            </article>
+
+            <article class="rounded-3xl border border-forest/10 bg-white p-6 shadow-sm">
+              <p class="text-sm font-bold text-clay">APIs 3 and 4: File and Drag and Drop</p>
+              <h3 class="mt-2 text-2xl font-black text-forest">Add a crop photo</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">Choose an image or drop it in the area below. This prototype only creates a local preview.</p>
+              <label id="dropZone" class="mt-5 flex min-h-40 cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-forest/25 bg-sand p-5 text-center transition hover:border-clay" for="cropImage">
+                <span class="font-bold text-forest">Drop a crop image here</span>
+                <span class="mt-1 text-sm text-slate-500">or click to choose a file</span>
+                <input id="cropImage" class="sr-only" type="file" accept="image/*" />
+              </label>
+              <img id="imagePreview" class="mt-5 hidden max-h-64 w-full rounded-2xl object-cover" alt="Selected crop preview" />
+              <p id="fileResult" class="mt-4 text-sm text-slate-700" aria-live="polite">No image selected.</p>
+            </article>
+
+            <article class="rounded-3xl border border-forest/10 bg-white p-6 shadow-sm">
+              <p class="text-sm font-bold text-clay">API 5: Canvas</p>
+              <h3 class="mt-2 text-2xl font-black text-forest">Visual crop pulse</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">Move the slider to redraw the chart. Canvas uses JavaScript drawing commands inside the browser.</p>
+              <label class="mt-5 block text-sm font-semibold text-forest" for="pulseRange">Soil moisture score: <span id="pulseValue">60</span>/100</label>
+              <input id="pulseRange" class="mt-2 w-full accent-[#e8754a]" type="range" min="0" max="100" value="60" />
+              <canvas id="pulseCanvas" class="mt-5 w-full rounded-2xl border border-forest/10 bg-sand" width="620" height="250" aria-label="Crop pulse chart">Your browser does not support Canvas.</canvas>
+            </article>
+
+            <article class="rounded-3xl border border-forest/10 bg-white p-6 shadow-sm lg:col-span-2">
+              <p class="text-sm font-bold text-clay">API 6: Web Notifications</p>
+              <h3 class="mt-2 text-2xl font-black text-forest">Create an inspection reminder</h3>
+              <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-600">After permission is allowed, the browser will show one demo notification. In a full product, this can be connected to a scheduled farm task.</p>
+              <button id="notificationButton" class="mt-5 rounded-xl bg-forest px-4 py-3 text-sm font-bold text-white hover:bg-[#0c261d]" type="button">Allow and test reminder</button>
+              <p id="notificationResult" class="mt-4 text-sm text-slate-700" aria-live="polite">Notification permission has not been requested.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="media" class="bg-forest py-16 text-white">
+        <div class="mx-auto max-w-6xl px-5">
+          <p class="text-sm font-bold uppercase tracking-[0.14em] text-leaf">API 7: HTML5 multimedia</p>
+          <h2 class="mt-2 text-3xl font-black">Audio and video learning corner</h2>
+          <p class="mt-4 max-w-3xl leading-7 text-white/75">These simple media controls show how Khetora can later include short farming lessons. The current media is only a technical demonstration of the HTML5 audio and video elements.</p>
+          <div class="mt-8 grid gap-6 lg:grid-cols-2">
+            <div class="rounded-3xl bg-white/10 p-6">
+              <h3 class="text-xl font-extrabold text-leaf">Audio API</h3>
+              <p class="mt-2 text-sm leading-6 text-white/75">Example audio player with native browser controls.</p>
+              <audio class="mt-5 w-full" controls preload="none">
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="rounded-3xl bg-white/10 p-6">
+              <h3 class="text-xl font-extrabold text-leaf">Video API</h3>
+              <p class="mt-2 text-sm leading-6 text-white/75">Example video player with native browser controls.</p>
+              <video class="mt-5 aspect-video w-full rounded-xl bg-black" controls preload="metadata">
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-forest/10 bg-sand py-7">
+
+    </footer>
+
+    <script>
+      const locationButton = document.getElementById("locationButton");
+      const locationResult = document.getElementById("locationResult");
+      const profileForm = document.getElementById("profileForm");
+      const profileResult = document.getElementById("profileResult");
+      const cropImage = document.getElementById("cropImage");
+      const dropZone = document.getElementById("dropZone");
+      const imagePreview = document.getElementById("imagePreview");
+      const fileResult = document.getElementById("fileResult");
+      const pulseRange = document.getElementById("pulseRange");
+      const pulseValue = document.getElementById("pulseValue");
+      const pulseCanvas = document.getElementById("pulseCanvas");
+      const notificationButton = document.getElementById("notificationButton");
+      const notificationResult = document.getElementById("notificationResult");
+
+      // Geolocation API
+      locationButton.addEventListener("click", () => {
+        if (!navigator.geolocation) {
+          locationResult.textContent = "Geolocation is not supported by this browser.";
+          return;
+        }
+
+        locationResult.textContent = "Getting your location...";
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const latitude = position.coords.latitude.toFixed(5);
+            const longitude = position.coords.longitude.toFixed(5);
+            locationResult.textContent = `Location captured. Latitude: ${latitude}, Longitude: ${longitude}.`;
+          },
+          () => {
+            locationResult.textContent = "Location permission was not allowed. You can still use the other tools.";
+          },
+          { enableHighAccuracy: true, timeout: 10000 }
+        );
+      });
+
+      // Local Storage API
+      function showSavedProfile() {
+        const savedProfile = localStorage.getItem("khetoraProfile");
+        if (!savedProfile) return;
+
+        const profile = JSON.parse(savedProfile);
+        profileResult.textContent = `Saved profile: ${profile.name} grows ${profile.crop}. Usual soil condition: ${profile.moisture}.`;
+        document.getElementById("farmerName").value = profile.name;
+        document.getElementById("cropName").value = profile.crop;
+        document.getElementById("savedMoisture").value = profile.moisture;
+      }
+
+      profileForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const profile = {
+          name: document.getElementById("farmerName").value.trim(),
+          crop: document.getElementById("cropName").value.trim(),
+          moisture: document.getElementById("savedMoisture").value
+        };
+        localStorage.setItem("khetoraProfile", JSON.stringify(profile));
+        showSavedProfile();
+      });
+
+      // File API and Drag and Drop API
+      function previewCropImage(file) {
+        if (!file || !file.type.startsWith("image/")) {
+          fileResult.textContent = "Please choose an image file only.";
+          return;
+        }
+
+        const imageUrl = URL.createObjectURL(file);
+        imagePreview.src = imageUrl;
+        imagePreview.classList.remove("hidden");
+        fileResult.textContent = `Selected image: ${file.name}`;
+      }
+
+      cropImage.addEventListener("change", () => previewCropImage(cropImage.files[0]));
+
+      ["dragenter", "dragover"].forEach((eventName) => {
+        dropZone.addEventListener(eventName, (event) => {
+          event.preventDefault();
+          dropZone.classList.add("border-clay", "bg-orange-50");
+        });
+      });
+
+      ["dragleave", "drop"].forEach((eventName) => {
+        dropZone.addEventListener(eventName, (event) => {
+          event.preventDefault();
+          dropZone.classList.remove("border-clay", "bg-orange-50");
+        });
+      });
+
+      dropZone.addEventListener("drop", (event) => previewCropImage(event.dataTransfer.files[0]));
+
+      // Canvas API
+      function drawPulse(score) {
+        const context = pulseCanvas.getContext("2d");
+        const width = pulseCanvas.width;
+        const height = pulseCanvas.height;
+        const values = [score, Math.min(100, score + 18), Math.max(15, 100 - score / 2)];
+        const labels = ["Soil", "Leaf", "Readiness"];
+        const barWidth = 110;
+        const gap = 70;
+        const startX = 75;
+        const baseY = 195;
+
+        context.clearRect(0, 0, width, height);
+        context.fillStyle = "#f7f3ea";
+        context.fillRect(0, 0, width, height);
+        context.strokeStyle = "#cbd5e1";
+        context.lineWidth = 2;
+        context.beginPath();
+        context.moveTo(55, baseY);
+        context.lineTo(width - 40, baseY);
+        context.stroke();
+
+        values.forEach((value, index) => {
+          const barHeight = value * 1.35;
+          const x = startX + index * (barWidth + gap);
+          const y = baseY - barHeight;
+          context.fillStyle = index === 0 ? "#e8754a" : "#12352a";
+          context.fillRect(x, y, barWidth, barHeight);
+          context.fillStyle = "#12352a";
+          context.font = "bold 16px Arial";
+          context.fillText(`${Math.round(value)}%`, x + 28, y - 10);
+          context.font = "14px Arial";
+          context.fillText(labels[index], x + 22, baseY + 27);
+        });
+      }
+
+      pulseRange.addEventListener("input", () => {
+        pulseValue.textContent = pulseRange.value;
+        drawPulse(Number(pulseRange.value));
+      });
+
+      // Web Notifications API
+      notificationButton.addEventListener("click", async () => {
+        if (!("Notification" in window)) {
+          notificationResult.textContent = "Notifications are not supported by this browser.";
+          return;
+        }
+
+        const permission = await Notification.requestPermission();
+        if (permission !== "granted") {
+          notificationResult.textContent = "Notification permission was not allowed.";
+          return;
+        }
+
+        new Notification("Khetora field reminder", {
+          body: "Check your crop condition before the next watering cycle."
+        });
+        notificationResult.textContent = "Demo reminder sent successfully.";
+      });
+
+      showSavedProfile();
+      drawPulse(Number(pulseRange.value));
+    </script>
+  </body>
+</html>
